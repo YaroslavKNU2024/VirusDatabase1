@@ -1,0 +1,38 @@
+﻿@model VirusDatabaseNew.Virus
+
+@{
+    ViewData["Title"] = "Видалити";
+}
+
+<h1>Видалити</h1>
+
+<h3>Ви упевнені, що хочете видалити вірус @Html.DisplayFor(model => model.VirusName)?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VirusName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VirusName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VirusDateDiscovered)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VirusDateDiscovered)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Group)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Group.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Так" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад до списку</a>
+    </form>
+</div>

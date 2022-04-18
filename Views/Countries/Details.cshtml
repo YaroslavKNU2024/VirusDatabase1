@@ -1,0 +1,24 @@
+﻿@model VirusDatabaseNew.Country
+
+@{
+    ViewData["Title"] = "Детальніше";
+}
+
+<h1>Деталі про країну @Html.DisplayFor(model => model.CountryName)</h1>
+
+<div>
+    @*<h4>Країнa</h4>*@
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Назад до списку</a>
+</div>
