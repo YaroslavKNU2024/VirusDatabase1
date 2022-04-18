@@ -160,9 +160,9 @@ namespace VirusDatabaseNew.Controllers
                 .Include(v => v.Group)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (groupId != null)
-                ViewBag.FacultyName = _context.VirusGroups.Where(g => g.Id == virus.GroupId).FirstOrDefault().GroupName;
+                ViewBag.GroupName = _context.VirusGroups.Where(g => g.Id == virus.GroupId).FirstOrDefault().GroupName;
             else
-                ViewBag.FacultyName = null;
+                ViewBag.GroupName = null;
             if (virus == null)
                 return NotFound();
 
